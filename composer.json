@@ -1,0 +1,15 @@
+{
+    "name": "amator_ded/php_lib_for_navbar",
+    "description": "library for navbar",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleksandr",
+            "email": "your@email.com"
+        }
+    ],
+    "require": {
+        "amator_ded/php_lib_for_navbar": "1.0.0"
+    }
+}
