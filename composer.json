@@ -11,5 +11,11 @@
     ],
     "require": {
         "amator_ded/php_lib_for_navbar": "1.0.0"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dfdxAlex/NavbarPhp.git"
+        }
+    ]
 }
