@@ -1,6 +1,8 @@
 <?php
 namespace nav_bar_lyb;
 
+use nav_bar_lyb\box_nav_menu\RenameElement;
+
 /**
   * The class creates dropdown menus from simple objects
   *
@@ -79,10 +81,22 @@ namespace nav_bar_lyb;
  {
     private $masObject = [];
     private $in;
+    private $renameElement;
+
+    public function getMasObject()
+    {
+      return $this->masObject;
+    }
+
+    public function setMasObject($mas)
+    {
+      $this->masObject = $mas;
+    }
 
     public function __construct(INavMenu $in)
     {
         $this->in = $in;
+        $this->renameElement = new RenameElement($this);
     }
 
     public function addElement(INavMenu $element)
@@ -122,14 +136,9 @@ namespace nav_bar_lyb;
 
         echo $rez;
     }
-    
+  
     public function renameElement(INavMenu $element)
     {
-        foreach($this->masObject as $key=>$value) {
-            if ($value === $element) {
-                unset($this->masObject[$key]);
-                return true;
-            }
-        }
+        $this->renameElement->renameElement($element);
     }
  }

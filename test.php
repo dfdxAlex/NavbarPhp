@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Этот автозагрузчик для работы с композером
+ */
+// include "../vendor/autoload.php";
+/**
+ * Этот автозагрузчик для работы при клонировании
+ */
 include "nav_bar_lyb/autoload.php";
 
 use nav_bar_lyb\NavMenu;
@@ -89,6 +96,7 @@ $buttonPageTwo = new ElementNavBar($obj);
  $oblBox->addElement($button);
  $oblBox->addElement($button1);
  $oblBox->addElement($button2);
+//  $oblBox->renameElement($button2);
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
