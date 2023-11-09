@@ -20,5 +20,10 @@
             "type": "vcs",
             "url": "https://github.com/dfdxAlex/NavbarPhp.git"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "nav_bar_lyb\\": "nav_bar_lyb/"
+        }
+    }
 }
