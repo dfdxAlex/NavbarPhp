@@ -3,7 +3,7 @@ namespace nav_bar_lyb;
 
 use nav_bar_lyb\box_nav_menu\RenameElement;
 use nav_bar_lyb\box_nav_menu\WriteElementFromArray;
-
+use nav_bar_lyb\box_nav_menu\StartPatternForBootstrap;
 /**
   * The class creates dropdown menus from simple objects
   *
@@ -84,6 +84,11 @@ use nav_bar_lyb\box_nav_menu\WriteElementFromArray;
     private $in;
     private $renameElement;
 
+    public function getIn()
+    {
+      return $this->in;
+    }
+    
     public function getMasObject()
     {
       return $this->masObject;
@@ -107,23 +112,25 @@ use nav_bar_lyb\box_nav_menu\WriteElementFromArray;
 
     public function writeElement()
     {
-        $this->rez = '
-        <li class="'.
-        $this->in->getProperty('nav-item').' '.
-        $this->in->getProperty('dropdown').'">
-          <a class="'.
-            $this->in->getProperty('nav-link').' '.
-            $this->in->getProperty('dropdown-toggle').'" 
-            href="'.$this->masObject[0]->getLink().'" 
-            id="navbarDropdown" 
-            role="button" 
-            data-bs-toggle="dropdown" 
-            aria-expanded="false"
-          >
-            '.$this->masObject[0]->getHome().'
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          ';
+        StartPatternForBootstrap::startPatternForBootstrap($this);
+
+        // $this->rez = '
+        // <li class="'.
+        // $this->in->getProperty('nav-item').' '.
+        // $this->in->getProperty('dropdown').'">
+        //   <a class="'.
+        //     $this->in->getProperty('nav-link').' '.
+        //     $this->in->getProperty('dropdown-toggle').'" 
+        //     href="'.$this->masObject[0]->getLink().'" 
+        //     id="navbarDropdown" 
+        //     role="button" 
+        //     data-bs-toggle="dropdown" 
+        //     aria-expanded="false"
+        //   >
+        //     '.$this->masObject[0]->getHome().'
+        //   </a>
+        //   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        //   ';
 
           WriteElementFromArray::writeElementFromArray($this);
 
