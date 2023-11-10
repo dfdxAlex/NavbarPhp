@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Этот автозагрузчик для работы с композером
+ * Этот автозагрузчик для работы с композером   
  */
 // include "../vendor/autoload.php";
 /**
@@ -9,12 +9,15 @@
  */
 include "nav_bar_lyb/autoload.php";
 
-use nav_bar_lyb\NavMenu;
-use nav_bar_lyb\ElementNavBar;
-use nav_bar_lyb\HeaderPage;
-use nav_bar_lyb\FooterPage;
-use nav_bar_lyb\BoxNavMenu;
+use nav_bar_lyb\{NavMenu,
+                 ElementNavBar,
+                 HeaderPage,
+                 FooterPage,
+                 BoxNavMenu};
 
+/**
+ * Стартовая разметка и подключение бутстрапа 5
+ */
 echo HeaderPage::printHeaderPage();
 
 
@@ -97,6 +100,7 @@ $buttonPageTwo = new ElementNavBar($obj);
  $oblBox->addElement($button1);
  $oblBox->addElement($button2);
 //  $oblBox->renameElement($button2);
+//  $oblBox->renameElement($button1);
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
@@ -109,6 +113,8 @@ $buttonPageTwo = new ElementNavBar($obj);
 $obj->addElement($buttonPageOne);
 $obj->addElement($buttonPageTwo);
 $obj->addElement($oblBox);
+
+// $obj->renameElement($buttonPageOne);
 
 /** Поставить меню на страницу */
 $obj->writeElement();

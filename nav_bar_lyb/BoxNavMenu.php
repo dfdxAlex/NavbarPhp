@@ -2,6 +2,7 @@
 namespace nav_bar_lyb;
 
 use nav_bar_lyb\box_nav_menu\RenameElement;
+use nav_bar_lyb\box_nav_menu\WriteElementFromArray;
 
 /**
   * The class creates dropdown menus from simple objects
@@ -106,7 +107,7 @@ use nav_bar_lyb\box_nav_menu\RenameElement;
 
     public function writeElement()
     {
-        $rez = '
+        $this->rez = '
         <li class="'.
         $this->in->getProperty('nav-item').' '.
         $this->in->getProperty('dropdown').'">
@@ -124,17 +125,13 @@ use nav_bar_lyb\box_nav_menu\RenameElement;
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           ';
 
-            foreach($this->masObject as $key=>$value) {
-                if ($key!==0) {
-                        $rez.=$value->writeElement();
-                }
-            }
+          WriteElementFromArray::writeElementFromArray($this);
 
-            $rez.=
+            $this->rez.=
           '</ul>
         </li>';
 
-        echo $rez;
+        echo $this->rez;
     }
   
     public function renameElement(INavMenu $element)
