@@ -5,6 +5,7 @@ use nav_bar_lyb\box_nav_menu\RenameElement;
 use nav_bar_lyb\box_nav_menu\WriteElementFromArray;
 use nav_bar_lyb\box_nav_menu\StartPatternForBootstrap;
 use nav_bar_lyb\box_nav_menu\EndPatternForBootstrap;
+use nav_bar_lyb\box_nav_menu\EchoBlockButton;
 /**
   * The class creates dropdown menus from simple objects
   *
@@ -119,7 +120,7 @@ use nav_bar_lyb\box_nav_menu\EndPatternForBootstrap;
 
         EndPatternForBootstrap::endPatternForBootstrap($this);
 
-        echo $this->rez;
+        EchoBlockButton::echoBlockButton($this);
     }
   
     public function renameElement(INavMenu $element)

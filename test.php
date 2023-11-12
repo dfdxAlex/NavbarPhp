@@ -114,6 +114,8 @@ $obj->addElement($buttonPageOne);
 $obj->addElement($buttonPageTwo);
 $obj->addElement($oblBox);
 
+// $obj->renameElement($oblBox);
+
 // $obj->renameElement($buttonPageOne);
 
 /** Поставить меню на страницу */
