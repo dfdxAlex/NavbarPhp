@@ -83,27 +83,80 @@ use nav_bar_lyb\box_nav_menu\EchoBlockButton;
  class BoxNavMenu extends INavMenuDiff
  {
     private $masObject = [];
-    private $in;
+    /**
+     * @var object $in  
+     * Link to the main object - container
+     * Main object is used to build button objects
+     * and drop-down menus.
+     * 
+     * Cсылка на главный объект - контейнер.
+     * Главный объект используется для построения объектов кнопок
+     * и выпадающих меню.
+     */
+    private $in; 
+    /**
+     * @var object $renameElement
+     * Contains a reference to an object that has a method for removing an element
+     * The object takes local $this to access the given object
+     * 
+     * Содержит ссылку на объект, в котором есть метод для удаления елемента
+     * Объект принимает местный $this для получения доступа к данному объекту
+     */
     private $renameElement;
 
+    /**
+     * @return object
+     * Returns a link to the main object - the container, it is used to build buttons
+     * and menu.
+     * Возвращает ссылку на главный объект - контейнер, он используется для построение кнопок
+     * и меню.
+     */
     public function getIn()
     {
       return $this->in;
     }
 
+    /**
+     * @return array
+     * Returns a reference to the array in which the collection is stored
+     * objects - buttons.
+     * 
+     * Возвращает ссылку на массив, в котором хранится коллекция
+     * объектов - кнопок.
+     * 
+     * OLD!!!
+     */
     public function getMasObject()
     {
       return $this->masObject;
     }
 
-    public function setMasObject($mas)
+    /**
+     * @return array
+     * Returns a reference to the array in which the collection is stored
+     * objects - buttons.
+     * 
+     * Возвращает ссылку на массив, в котором хранится коллекция
+     * объектов - кнопок.
+     */
+    public function &getLinkMasObject()
     {
-      $this->masObject = $mas;
+      return $this->masObject;
     }
 
+    /**
+     * @var object INavMenu
+     * The constructor accepts the main object - the container
+     * Конструктор принимает главный объект - контейнер
+     */
     public function __construct(INavMenu $in)
     {
         $this->in = $in;
+        /**
+         * @return object
+         * The class returns an object with one method for removing an element from the container
+         * Класс возвращает объект, в котором один метод для удаления элемента из контейнера
+         */
         $this->renameElement = new RenameElement($this);
     }
 

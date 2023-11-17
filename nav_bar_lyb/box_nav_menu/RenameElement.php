@@ -23,12 +23,12 @@ class RenameElement
 
     public function renameElement($element)
     {
-        $mas = $this->in->getMasObject();
+        $mas = &$this->in->getLinkMasObject();
         foreach($mas as $key=>$value) {
             if ($value === $element) {
                 unset($mas[$key]);
+                break;
             }
         }
-        $this->in->setMasObject($mas);
     }
 }

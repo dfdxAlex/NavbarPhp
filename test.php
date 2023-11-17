@@ -99,7 +99,7 @@ $buttonPageTwo = new ElementNavBar($obj);
  $oblBox->addElement($button);
  $oblBox->addElement($button1);
  $oblBox->addElement($button2);
-//  $oblBox->renameElement($button2);
+ $oblBox->renameElement($button2);
 //  $oblBox->renameElement($button1);
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
