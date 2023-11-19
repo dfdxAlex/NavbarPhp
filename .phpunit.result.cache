@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Test_getLinkMasObject::test_renameElement":4,"GetLinkMasObject::test_renameElement":3},"times":{"Test_getLinkMasObject::test_renameElement":0.055,"GetLinkMasObject::test_renameElement":0.008,"TestRenameElement::test_renameElement":0.006}}
